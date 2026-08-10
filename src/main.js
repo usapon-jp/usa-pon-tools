@@ -46,6 +46,8 @@ const icon = (name) => {
   return icons[name];
 };
 
+const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 const bunnyFace = `
   <svg class="bunny-face" viewBox="0 0 48 48" aria-hidden="true">
     <path d="M15.8 17.5c-1.7-5.9-1.1-11.1 1.6-11.8 2.4-.6 4.7 3.7 5.4 9.1M32.2 17.5c1.7-5.9 1.1-11.1-1.6-11.8-2.4-.6-4.7 3.7-5.4 9.1"/>
@@ -62,7 +64,7 @@ const bunnyMascot = `
         <path d="M4 180 L58 180 L73 132 L82 103 L98 85 L125 86 L151 105 L168 132 L190 151 L226 141 L260 119 L274 108 L278 116 L276 146 L269 178 L258 211 L239 243 L210 269 L165 288 L94 300 L42 294 L13 278 L3 247 Z"/>
       </clipPath>
     </defs>
-    <image href="/usapon-mascot-source.png" width="370" height="320" clip-path="url(#mascot-subject-clip)"/>
+    <image href="${assetUrl("usapon-mascot-source.png")}" width="370" height="320" clip-path="url(#mascot-subject-clip)"/>
   </svg>`;
 
 const emptySlots = Array.from({ length: 8 }, (_, index) => `
@@ -75,7 +77,7 @@ const emptySlots = Array.from({ length: 8 }, (_, index) => `
 document.querySelector("#app").innerHTML = `
   <header class="site-header">
     <a class="brand" href="#" aria-label="うさぽん LINEスタンプ仕上げ ホーム">
-      <span class="brand-logo"><img src="/usapon-logo.png" alt="うさぽん"></span>
+      <span class="brand-logo"><img src="${assetUrl("usapon-logo.png")}" alt="うさぽん"></span>
       <strong>うさぽん</strong>
       <span>LINEスタンプ仕上げ</span>
     </a>
